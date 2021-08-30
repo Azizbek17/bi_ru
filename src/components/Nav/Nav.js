@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter, NavLink, Link, } from 'react-router-dom';
-import { HashRouter, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 
 function Nav() {
@@ -12,7 +12,7 @@ function Nav() {
           <div className="dropdown">
             <button className="dropbtn">ЖЕНСКАЯ ОДЕЖДА</button>
             <div className="dropdown-content">
-              <li><NavLink to="/blouses" className='nav_link'>Блузки</NavLink></li>
+              <li><NavLink to="/card" className='nav_link'>Блузки</NavLink></li>
               <li><NavLink to="/dresses" className='nav_link'>Платья</NavLink></li>
               <li><NavLink to="/dresses" className='nav_link'>Брюки и джинсы</NavLink></li>
               <li><NavLink to="/dresses" className='nav_link'>Костюмы</NavLink></li>

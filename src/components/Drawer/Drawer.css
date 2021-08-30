@@ -3,95 +3,83 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 1000px;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
-}
-
-.drawer {
-    display: flex;
-    flex-direction: column;
+  }
+  
+  .drawer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
     position: absolute;
     width: 385px;
     height: 100%;
     right: 0;
     background: #ffffff;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-}
-
-.items {
+  }
+  
+  .items {
     overflow: auto;
-    margin-bottom: 10px;
-}
-
-.cartItem {
-    display: flex;
-    border: 1px solid rgb(160, 160, 160);
-    border-radius: 20px;
+    flex: 1;
+  }
+  
+  .cartItem {
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.pic {
-margin: 10px;
-}
-
-.removeBtn {
+    border: 2px solid #c2c2c2;
+    border-radius: 20px;
+    overflow: hidden;
+  margin-bottom: 20px;
+  }
+  
+  .cartItemImg {
+  height: 70px;
+  width: 70px;
+  background-size: contain;
+  background-position-x: 10px;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  }
+  
+  .cartItemInfo {
+    margin-right: 30px;
+  }
+  
+  .removeBtn {
     opacity: 0.5;
+  }
+  
+  .removeBtn:hover {
+    opacity: 1;
     cursor: pointer;
     transition: opacity 0.15s ease-in-out;
-}
-.removeBtn:hover {
-    opacity: 1;
-}
-
-
-li {
-display: flex;
-align-items: flex-end;
-}
-
-.dash_button {
+  }
+  
+  .green_button {
+  width: 100%;
+  cursor: pointer;
+  background-color: rgb(104, 255, 104);
+  margin-bottom: 30px;
+  }
+  
+  .line_info {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .cartLine {
     flex: 1;
-    height: 1px;
-    border-bottom: 1px dashed #dfdfdf;
+    height: 1;
+    border-bottom: 1px dashed #b3b3b3;
     position: relative;
     top: -4px;
-    margin: 0 7px;
-}
-
-.order_button {
-font-weight: 600;
-border: none;
-color: white;
-width: 100%;
-width: 325px;
-height: 45px;
-left: 895px;
-top: 974px;
-background: #9DD558;
-border-radius: 18px;
-cursor: pointer;
-transition: 0.1s ease-in-out;
-}
-
-
-.order_button:hover {
-    background: rgb(26, 160, 21);
-}
-
-
-.order_button:active {
-    background: rgb(1, 104, 1);
-}
-
-.arrowBtn {
-    margin-left: 15px;
-}
-
-.cart_remove {
+    margin: 0 7px
+  }
+  
+  .basket {
+    margin-top: 30px;
     display: flex;
-    justify-content: space-around;
-}
+    justify-content: space-between;
+  }
+  

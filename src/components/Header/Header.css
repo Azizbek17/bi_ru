@@ -41,5 +41,5 @@ h2 {
 }
 
 .icon_card {
-    cursor: pointer;
+    list-style-type: none;
 }

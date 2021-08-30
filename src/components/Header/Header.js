@@ -3,7 +3,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { MdPhoneIphone } from 'react-icons/md';
 
 
-function Header(props) {
+function Header() {
+
 
   return (
     <>
@@ -22,7 +23,7 @@ function Header(props) {
         </div>
         <div className="logo_right">
           <div className="phone_icon"><MdPhoneIphone /> | +996 (772) 200 021</div>
-          <li onClick={props.onClickCart} className="icon_card">
+          <li className="icon_card">
             <div><AiOutlineShoppingCart /> | в корзине:</div>
           </li>
         </div>

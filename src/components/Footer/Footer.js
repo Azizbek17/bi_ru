@@ -6,7 +6,7 @@ function Footer() {
 
         <footer>
         <div className="container contact_container">
-          <div class="row">
+          <div className="row">
 
             <div className="col-sm">
               <h3>НАШИ МАГАЗИНЫ:</h3>

@@ -1,4 +1,4 @@
-/* .card-container {
+.card-container {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
@@ -42,6 +42,16 @@
     grid-row-gap: 30px;
 }
 
+.button {
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 2px solid #f2f2f2;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 35px;
+    width: 35px;
+}
+
 @media screen and (max-width: 765px) {
     .cards {
         grid-template-columns: repeat(1, 1fr);
@@ -49,4 +59,5 @@
         grid-row-gap: 10px;
         justify-items: center;
     }
-} */
+}
+
