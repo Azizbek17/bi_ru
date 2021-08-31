@@ -1,34 +1,33 @@
 import React from 'react';
 import './Card.css'
 
-function Card() {
+
+function Card({ title, imageUrl, price, onPlus }) {
+
+    const [isAdded, setIsAdded] = React.useState(false);
+    
+    const onClickPlus = () => {
+        onPlus({ title, imageUrl, price });
+        setIsAdded(!isAdded);
+    };
+
     return (
-        <div className='container'>
-            <section className="clothes">
-                <div className="wrapper apart">
-                    <div className="cards">
 
-                        <div className="card">
-                            <img src='./img/women/blouses/2.jpg' width='250'></img>
-                            <div className="card-container">
-                                <p>DAFSDF</p>
-                                <div className="card-info">
-                                    <div className="money"><span>Цена:</span>
-                                        <b>2986875</b></div>
-                                    <div className="info">
-                                        <span><i class="fas fa-address-card"></i>2BA</span>
-                                    </div>
-                                    <button className="button">
-                                        <img width={11} height={11} src="/img/vector-plus.svg" alt="Plus"></img>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
+        <div className="card">
+            <img src={imageUrl} width='250'></img>
+            <div className="card-container">
+                <p>{title}</p>
+                <div className="card-info">
+                    <div className="money"><span>Цена:</span>
+                        <b>{price}</b></div>
+                    <div className="info">
+                        <span><i class="fas fa-address-card"></i>2BA</span>
                     </div>
+                    <img className="button_plus" onClick={onClickPlus} src={isAdded ? "/img/cheked.svg" : "/img/vector-plus.svg"} alt="Plus"></img>
                 </div>
-            </section>
+            </div>
         </div>
+
     );
 }
 

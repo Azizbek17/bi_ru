@@ -34,22 +34,28 @@
     margin-right: 8px;
 }
 
-.cards {
+/* .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0;
     grid-row-gap: 30px;
-}
+} */
 
-.button {
+.button_plus {
+
     margin-bottom: 10px;
     background: #ffffff;
     border: 2px solid #f2f2f2;
     box-sizing: border-box;
-    border-radius: 8px;
-    height: 35px;
-    width: 35px;
+    border-radius: 7px;
+    height: 30px;
+    width: 30px;
+}
+
+.button_plus:hover {
+
+    cursor: pointer;
 }
 
 @media screen and (max-width: 765px) {

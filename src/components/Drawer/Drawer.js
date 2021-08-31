@@ -3,40 +3,29 @@ import './Drawer.css';
 
 
 
-function Drawer() {
+function Drawer({ onClose, items = [] }) {
 
-    return (
-        <>
-        
-        <div style={{ display: 'none' }} className="overlay">
+  return (
+    <>
+
+      <div className="overlay">
         <div className="drawer">
-          <h3 className="basket">Корзина<img className="removeBtn" src="/img/x-vector.svg"></img></h3>
+          <h3 className="basket">Корзина<img onClick={onClose} className="removeBtn" src="/img/x-vector.svg" alt="close"></img></h3>
 
           <div className="items">
-            <div className="cartItem d-flex">
-              <div
-                style={{ backgroundImage: 'url(/img/women/trousers/example.jpg)' }}
-                className="cartItemImg">
+            {items.map((obj) => (
+              <div className="cartItem d-flex">
+                <div
+                  style={{ backgroundImage: `url(${obj.imageUrl})` }}
+                  className="cartItemImg">
+                </div>
+                <div className="cartItemInfo">
+                  <p>{obj.title}</p>
+                  <b>{obj.price}сом</b>
+                </div>
+                <img className="removeBtn" src="/img/x-vector.svg"></img>
               </div>
-              <div className="cartItemInfo">
-                <p>DAFSDFdsdad</p>
-                <b>5000 сом</b>
-              </div>
-              <img className="removeBtn" src="/img/x-vector.svg"></img>
-            </div>
-
-            <div className="cartItem d-flex">
-              <div
-                style={{ backgroundImage: 'url(/img/women/trousers/example.jpg)' }}
-                className="cartItemImg">
-              </div>
-              <div className="cartItemInfo">
-                <p>DAFSDFdsdad</p>
-                <b>5000 сом</b>
-              </div>
-              <img className="removeBtn" src="/img/x-vector.svg"></img>
-            </div>
-
+            ))}
           </div>
 
           <div className="cartTotalBlock">
@@ -54,8 +43,8 @@ function Drawer() {
         </div>
       </div>
 
-        </>
-    );
+    </>
+  );
 }
 
 export default Drawer;

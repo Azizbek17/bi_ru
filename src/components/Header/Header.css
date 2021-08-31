@@ -42,4 +42,5 @@ h2 {
 
 .icon_card {
     list-style-type: none;
+    cursor: pointer;
 }
