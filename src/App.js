@@ -12,32 +12,38 @@ import Footer from './components/Footer/Footer';
 import Drawer from './components/Drawer/Drawer';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Blouses from './components/Women/Blouses';
+import axios from 'axios';
 
 function App() {
-  
+
   const [cartOpened, setCartOpened] = React.useState(false);
   const [cartItems, setCartItems] = React.useState([]);
 
   const [items, setItems] = React.useState([]);
-    
-    React.useEffect(() => {
-        fetch('https://61253db83c91fb0017e72a04.mockapi.io/items') 
-        .then((res) => {
-            return res.json();
-        })
-        .then((json) => {
-            setItems(json);
-        });
-    }, []);
 
-    const onAddToCart = (obj) => {
-        setCartItems([ ... cartItems, obj]);
-    };
+  React.useEffect(() => {
+    axios.get('https://61253db83c91fb0017e72a04.mockapi.io/items').then((res) => {
+      setItems(res.data)
+    });
+    axios.get('https://61253db83c91fb0017e72a04.mockapi.io/cart').then((res) => {
+      setCartItems(res.data);
+    }); 
+  }, []);
+
+  const onAddToCart = (obj) => {
+    axios.post('https://61253db83c91fb0017e72a04.mockapi.io/cart', obj);
+    setCartItems((prev) => [ ... prev, obj]);
+  };
+
+  const onRemoveItem = (id) => {
+    axios.delete(`https://61253db83c91fb0017e72a04.mockapi.io/cart/${id}`);
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  };
 
   return (
 
     <div className="wrapper clear">
-      {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} />}
+      {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} />}
       <Header onClickCart={() => setCartOpened(true)} />
       <Nav />
       <HashRouter>

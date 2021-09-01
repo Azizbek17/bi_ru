@@ -5,9 +5,6 @@ import './Blouses.css';
 
 function Blouses( {items, onAddToCart} ) {
 
-    
-    
-
     return (
 
         <div className="dflex_card">
