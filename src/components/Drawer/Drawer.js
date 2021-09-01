@@ -37,7 +37,7 @@ function Drawer({ onClose, items = [] }) {
               </li>
             </ul>
 
-            <button className="green_button">Офорить заказ</button>
+            <button className="green_button">Оформить заказ</button>
           </div>
 
         </div>
